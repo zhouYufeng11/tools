@@ -1,0 +1,22 @@
+
+
+
+.head-box {
+	width: 100px;
+	height: 50px;
+	background-color: yellowgreen;
+}
+
+.body-box {
+	width: 100px;
+	height: 0;
+	overflow: hidden;
+	background-color: pink;
+	transition: height 2s linear;
+}
+
+.item {
+	height: 50px;
+	box-sizing: border-box;
+	border: 1px solid red;
+}
