@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<div class="search-box">
+			<div class="search-input">
+				<input type="text" class="input" id="J_input" />
+				<button class="search-btn">搜索按钮</button>
+			</div>
+
+			<div class="search-list"></div>
+		</div>
+
+		<script></script>
+		<script src="./index.js"></script>
+		<script>
+			//   获取 input 事件并给其相应的处理，主要是为了在下一次请求之前终止上一次还没有请求完成的请求
+			//	 避免因为网络原因导致返回的数据的与预期的结果不符合
+			const oInput = document.getElementsByClassName('input')[0],
+						oSearchBtn = document.getElementsByClassName('search-btn')[0],
+						oList = document.getElementsByClassName('search-list')[0];
+
+			//	配置搜索框
+			$searchBox({
+				searchBox: null,
+				input: oInput,
+				button: oSearchBtn,
+				list: oList,
+				template: `<div class="item"> {{ item }} </div>`,
+				height: 50
+			});
+
+			//	virtually  data  虚拟数据
+			const data = [1, 12, 123, 1234, 22, 23, 33, 7, 4, 5];
+
+			//	事件的事件接口，用户可以根据情况合理的写事件处理函数
+			oSearchBtn.handleButton = function( ev ) {  }
+
+			oInput.handleInput = function( ev, vm ) { 
+				//	判断两次输入的内容是否一致, 如果有变化才进行请求，并重新渲染输入框
+				const inputValue = clearSpace( this.value );
+
+				if(!inputValue) return vm.filterData = [];
+				vm.filterData = data.filter(item => item.toString().includes( inputValue ));
+
+			}
+
+			oList.handleList = function( ev ) {  }
+
+
+		</script>
+	</body>
+</html>
