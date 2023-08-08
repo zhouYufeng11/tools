@@ -24,11 +24,12 @@
 		oList && listenEvent(oList, 'click', handleList);
 	}
 
-	/*
-		事件处理函数
-				handleList：监听点击搜索框的事件
-				handleButton：监听点击搜索按钮事件
-				handleInput：监听输入框输入事件
+
+	/	**
+	 	* @description  事件处理函数
+	 	* @param	handleList 监听点击搜索框的事件
+	 	*	@param	handleButton 监听点击搜索按钮事件
+		*	@param	handleInput 监听输入框输入事件
 	*/
 
 	//	监听点击搜索框的事件
@@ -62,13 +63,12 @@
 	}
 
 
-
-	/*
-		数据监听代理
-				vm： 数据监听对象
-				filterData： 数据源
-				updateList：当监听的数据发生改变的时候，更新列表
-				show：根据数组的长度合理的显示列表
+	/	**
+	 	* @description  数据监听代理
+	 	* @param	vm 数据监听对象
+	 	*	@param	filterData 数据源
+		*	@param	updateList 当监听的数据发生改变的时候，更新列表
+		*	@param	show 根据数组的长度合理的显示列表
 	*/
 
 	//	发送 ajax 请求, 成功之后显示元素，并根据元素的长度而变化当前的容器的长度
@@ -116,12 +116,12 @@
 
 
 
-/*
-	utils 合集
-			clearSpace：删除输入框中所有的空格
-			debounce：函数防抖
-			replaceTpl：模板字符串替换
-			listenEvent：事件监听兼容性处理
+/	**
+ 	* @description  utils 合集
+ 	* @param	clearSpace：删除输入框中所有的空格
+ 	*	@param	debounce：函数防抖
+	*	@param	replaceTpl：模板字符串替换
+	*	@param	listenEvent：事件监听兼容性处理
 */
 
 //	去除所有的空格，因为匹配空格是没有用的
